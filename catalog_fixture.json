@@ -1,0 +1,44 @@
+[
+{
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+        "name": "MSI DigitalDisplay 5'",
+        "description": "Монитор MSI DigitalDisplay 5'. Super, Ultra, Pro, Max, Extra Quality. Разрешение 10 000 000 х 10 000 000 пикселей на дюйм. Питание от адронного коллайдера.",
+        "image": "",
+        "category": 1,
+        "price": "5.00",
+        "created_at": "2025-10-12T09:48:37.711Z",
+        "updated_at": "2025-10-12T09:48:37.711Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+        "name": "Avenger 567.18.9K",
+        "description": "Клавиатура для ПК.\r\nРаботает только на ПК с ChromeOS.\r\nПоддержка 18000 языков (Русский, Английский, Немецкий, Албанский, Китайский, Португальский, Сычуаньский, Азербайджанский, Тихоокеанский, Нептунский, Латынь, Майский ... )",
+        "image": "",
+        "category": 2,
+        "price": "59999.00",
+        "created_at": "2025-10-12T09:55:29.382Z",
+        "updated_at": "2025-10-12T09:55:29.382Z"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+        "name": "Мониторы",
+        "description": "Мониторы для ПК"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+        "name": "Клавиатуры",
+        "description": "Клавиатуры для ПК"
+    }
+}
+]
