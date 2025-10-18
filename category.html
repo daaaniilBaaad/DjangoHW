@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Категория 1</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .sidebar { width: 220px; }
+        .product-card { transition: box-shadow 0.2s; }
+        .product-card:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <!-- Сайдбар -->
+    <div class="d-flex flex-column justify-content-between vh-100 bg-dark p-3 position-fixed sidebar">
+        <div>
+            <h6 class="text-white mb-3">Меню</h6>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item mb-1">
+                    <a href="/Main_page.html" class="nav-link text-light">Главная</a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="/category.html" class="nav-link active">Категории</a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="/Catalog.html" class="nav-link text-light">Заказы</a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="/contacts.html" class="nav-link text-light">Контакты</a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <div class="dropup">
+                <button class="btn btn-dark dropdown-toggle w-100 text-start" type="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                    Пользователь
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="userMenu">
+                    <li><a class="dropdown-item" href="profile.html">Профиль</a></li>
+                    <li><a class="dropdown-item" href="login.html">Вход</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Контент -->
+    <main class="ms-220 p-4" style="margin-left:220px;">
+        <div class="container">
+            <h2 class="text-center mb-5">Категория 1</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Карточки -->
+                <div class="col">
+                    <div class="card product-card text-center h-100 p-3">
+                        <h5>Товар 1</h5>
+                        <p class="fs-4 fw-bold my-2">$100</p>
+                        <p>10 users included, 2 GB of storage,<br>Email support, Help center access</p>
+                        <a href="#" class="btn btn-outline-primary">Купить</a>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card product-card text-center h-100 p-3">
+                        <h5>Товар 2</h5>
+                        <p class="fs-4 fw-bold my-2">$150</p>
+                        <p>15 users included, 5 GB of storage,<br>Email support, Help center access</p>
+                        <a href="#" class="btn btn-outline-primary">Купить</a>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card product-card text-center h-100 p-3">
+                        <h5>Товар 3</h5>
+                        <p class="fs-4 fw-bold my-2">$200</p>
+                        <p>20 users included, 10 GB of storage,<br>Email support, Help center access</p>
+                        <a href="#" class="btn btn-outline-primary">Купить</a>
+                    </div>
+                </div>
+
+                <!-- Можно дублировать карточки при необходимости -->
+            </div>
+        </div>
+    </main>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

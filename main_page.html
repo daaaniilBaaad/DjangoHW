@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="d-flex">
+
+    <!-- Сайдбар -->
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 220px; height: 100vh;">
+        <h2 class="text-white">Меню</h2>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link active text-white">Главная</a>
+            </li>
+            <li>
+                <a href="categories.html" class="nav-link text-white">Категории</a>
+            </li>
+            <li>
+                <a href="orders.html" class="nav-link text-white">Заказы</a>
+            </li>
+            <li>
+                <a href="contacts.html" class="nav-link text-white">Контакты</a>
+            </li>
+        </ul>
+
+        <!-- Выпадающее меню пользователя -->
+        <div class="dropup mt-auto">
+            <button class="btn btn-dark dropdown-toggle w-100 text-start"
+                    type="button"
+                    id="userMenu"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                Пользователь
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="userMenu">
+                <li><a class="dropdown-item" href="profile.html">Профиль</a></li>
+                <li><a class="dropdown-item" href="login.html">Вход</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Контент -->
+    <div class="p-4 w-100 text-center">
+        <h1>Главная</h1>
+        <p class="text-muted">Вы находитесь на сайте, предназначенном для продажи товаров.</p>
+
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <div class="card" style="width: 14rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Товар 1</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">$100</h6>
+                    <p class="card-text">10 users included, 2 GB of storage,<br>Email support, Help center access</p>
+                    <a href="buy.html" class="btn btn-outline-primary">Купить</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 14rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Товар 2</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">$150</h6>
+                    <p class="card-text">20 users included, 5 GB of storage,<br>Email support, Help center access</p>
+                    <a href="buy.html" class="btn btn-outline-primary">Купить</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 14rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Товар 3</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">$200</h6>
+                    <p class="card-text">50 users included, 10 GB of storage,<br>Email support, Help center access</p>
+                    <a href="buy.html" class="btn btn-outline-primary">Купить</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Контакты</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .sidebar {
+            width: 220px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Сайдбар -->
+    <div class="d-flex flex-column justify-content-between vh-100 bg-dark p-3 position-fixed sidebar">
+        <div>
+            <h6 class="text-white mb-3">Меню</h6>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item mb-1">
+                    <a href="/Main_page.html" class="nav-link text-light">Главная</a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="/category.html" class="nav-link text-light">Категории</a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="/Catalog.html" class="nav-link text-light">Заказы</a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="/contacts.html" class="nav-link active">Контакты</a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <div class="dropup">
+                <button class="btn btn-dark dropdown-toggle w-100 text-start" type="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                    Пользователь
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="userMenu">
+                    <li><a class="dropdown-item" href="profile.html">Профиль</a></li>
+                    <li><a class="dropdown-item" href="login.html">Вход</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Контент -->
+    <main class="ms-220 p-4" style="margin-left:220px;">
+        <div class="container">
+            <h2 class="text-center mb-5">Контакты</h2>
+            <div class="row g-4">
+                <!-- Левая колонка: форма -->
+                <div class="col-md-6">
+                    <div class="bg-white rounded-3 p-4 shadow-sm">
+                        <h4 class="mb-4">Обратная связь</h4>
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-medium">Имя</label>
+                                <input type="text" class="form-control" id="name" placeholder="Ваше имя">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-medium">Почта</label>
+                                <input type="email" class="form-control" id="email" placeholder="example@mail.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label fw-medium">Сообщение</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Ваше сообщение"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Правая колонка: контакты -->
+                <div class="col-md-6">
+                    <div class="bg-white rounded-3 p-4 shadow-sm">
+                        <h4 class="mb-4">Наши контакты</h4>
+                        <p><strong>Москва:</strong> +7 (777) 777-77-77</p>
+                        <p><strong>Санкт-Петербург:</strong> +8 (777) 777-77-77</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
