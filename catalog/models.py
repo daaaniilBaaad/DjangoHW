@@ -29,6 +29,9 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)  # дата создания,
     updated_at = models.DateTimeField(auto_now=True)  # дата последнего изменения.
 
+    published = models.BooleanField(default=False, verbose_name="Опубликован")  # признак публикации
+    views = models.PositiveIntegerField(default=0, verbose_name="Количество просмотров")  # счетчик просмотров
+
     class Meta:
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"

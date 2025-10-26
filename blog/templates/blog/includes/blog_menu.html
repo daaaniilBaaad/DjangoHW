@@ -1,0 +1,12 @@
+<div class="mb-3">
+    {% if request.resolver_match.url_name == 'blogpost_create' %}
+        <a href="{% url 'catalog:product_list' %}" class="btn btn-primary">Каталог</a>
+        <a href="{% url 'blog:blogpost_list' %}" class="btn btn-secondary">Все посты</a>
+    {% elif request.resolver_match.url_name == 'blogpost_list' %}
+        <a href="{% url 'blog:blogpost_create' %}" class="btn btn-primary">Создать пост</a>
+        <a href="{% url 'catalog:product_list' %}" class="btn btn-secondary">Каталог</a>
+    {% else %}
+        <a href="{% url 'blog:blogpost_create' %}" class="btn btn-primary">Создать пост</a>
+        <a href="{% url 'blog:blogpost_list' %}" class="btn btn-secondary">Все посты</a>
+    {% endif %}
+</div>
