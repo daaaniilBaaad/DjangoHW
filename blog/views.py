@@ -1,5 +1,7 @@
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+
+from blog.forms import BlogForm
 from blog.models import BlogPost
 
 
@@ -26,7 +28,8 @@ class BlogPostDetailView(DetailView):
 
 class BlogPostCreateView(CreateView):
     model = BlogPost
-    fields = ['title', 'content', 'preview', 'published']
+    form_class = BlogForm
+    # fields = ['title', 'content', 'preview', 'published']
     template_name = 'blog/blogpost_form.html'
 
     def form_valid(self, form):

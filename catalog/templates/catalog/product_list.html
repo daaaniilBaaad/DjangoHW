@@ -1,6 +1,13 @@
 {% extends "catalog/base.html" %}
 {% load my_tags %}
 {% block content %}
+<div class="container mt-3">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Каталог товаров</h2>
+        <a class="btn btn-success" href="{% url 'catalog:product_create' %}">Создать новый товар</a>
+    </div>
+</div>
+
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -17,6 +24,10 @@
                         </p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
                             <a class="btn btn-primary" href="{% url 'catalog:product_detail' product.pk %}" role="button">Посмотреть</a>
+                            <div>
+                                <a class="btn btn-warning btn-sm" href="{% url 'catalog:product_update' product.pk %}">Редактировать</a>
+                                <a class="btn btn-danger btn-sm" href="{% url 'catalog:product_delete' product.pk %}">Удалить</a>
+                            </div>
                         </div>
                     </div>
                 </div>
