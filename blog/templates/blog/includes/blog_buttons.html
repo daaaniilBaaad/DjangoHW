@@ -1,0 +1,16 @@
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <p>
+                {% if request.path == '/blog/create/' %}
+                    <a class="btn btn-primary" href="{% url 'blog:blogpost_list' %}">Все посты</a>
+                {% elif request.path == '/blog/' %}
+                    <a class="btn btn-primary" href="{% url 'blog:blogpost_create' %}">Создать пост</a>
+                {% else %}
+                    <a class="btn btn-primary" href="{% url 'blog:blogpost_create' %}">Создать пост</a>
+                    <a class="btn btn-secondary" href="{% url 'blog:blogpost_list' %}">Все посты</a>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+</section>

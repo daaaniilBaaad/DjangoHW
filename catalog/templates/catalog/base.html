@@ -84,21 +84,33 @@
     </ul>
 </div>
 <header data-bs-theme="dark">
-{% include 'includes/inc_menu.html' %}
+    {% include 'catalog/includes/inc_menu.html' %}
 </header>
+
 <main>
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">АнтиОнлайн магазин</h1>
                 <p class="lead text-body-secondary">ГиперМАН</p>
-                <p><a href="#" class="btn btn-primary my-2">Main call to action</a> <a href="#"
-                                                                                       class="btn btn-secondary my-2">Secondary
-                    action</a></p></div>
+                <p>
+                    {% if request.path == '/blog/create/' %}
+                        <a class="btn btn-primary" href="{% url 'catalog:product_list' %}">Каталог</a>
+                        <a class="btn btn-secondary" href="{% url 'blog:blogpost_list' %}">Все посты</a>
+                    {% elif request.path == '/blog/' %}
+                        <a class="btn btn-primary" href="{% url 'blog:blogpost_create' %}">Создать пост</a>
+                        <a class="btn btn-secondary" href="{% url 'catalog:product_list' %}">Каталог</a>
+                    {% else %}
+                        <a class="btn btn-primary" href="{% url 'blog:blogpost_create' %}">Создать пост</a>
+                        <a class="btn btn-secondary" href="{% url 'blog:blogpost_list' %}">Все посты</a>
+                    {% endif %}
+                </p>
+            </div>
         </div>
     </section>
-{% block content %}
-{% endblock %}
+
+    {% block content %}
+    {% endblock %}
 </main>
 <footer class="text-body-secondary py-5">
     <div class="container"><p class="float-end mb-1"><a href="#">Back to top</a></p>
