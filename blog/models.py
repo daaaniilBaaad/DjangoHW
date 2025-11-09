@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -8,7 +9,7 @@ class BlogPost(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     published = models.BooleanField(default=False, verbose_name="Опубликовано")  # признак публикации
     views = models.PositiveIntegerField(default=0, verbose_name="Количество просмотров")
-    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Автор")
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Автор")
 
     class Meta:
         verbose_name = "Блог-пост"
