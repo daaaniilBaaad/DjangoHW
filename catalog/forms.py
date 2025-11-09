@@ -1,7 +1,18 @@
+from xmlrpc.client import Boolean
+
 from django.core.exceptions import ValidationError
-from django.forms import ModelForm
+from django.forms import ModelForm, BooleanField
 
 from catalog.models import Product
+
+class StyleFormMixin:
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for fild_name, fild in self.fields.items():
+            if isinstance(fild, BooleanField):
+                fild.widget.attrs['class'] = 'form-check-input'
+            else:
+                fild.widget.attrs['class'] = 'form-control'
 
 
 BANNED_WORDS = [
