@@ -20,6 +20,12 @@ BANNED_WORDS = [
     'дешево', 'бесплатно', 'обман', 'полиция', 'радар'
 ]
 
+class ProductModeratorForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = ('name', 'description','image', 'category', 'price')
+
+
 class ProductForm(ModelForm):
     class Meta:
         model = Product

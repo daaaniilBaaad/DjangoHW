@@ -1,7 +1,14 @@
 from django.db import models
 
+from users.models import User
+
 
 class Product(models.Model):
+    STATUS_CHOICES = [
+        ('draft', 'Черновик'),
+        ('published', 'Опубликовано'),
+    ]
+
     name = models.CharField(
         max_length=150, verbose_name="Наименование"
     )  # наименование,
@@ -30,11 +37,28 @@ class Product(models.Model):
 
     published = models.BooleanField(default=False, verbose_name="Опубликован")  # признак публикации
     views = models.PositiveIntegerField(default=0, verbose_name="Количество просмотров")  # счетчик просмотров
+    status = models.CharField(
+        max_length=10,
+        choices=STATUS_CHOICES,
+        default='draft',
+        verbose_name="Статус публикации"
+    )
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="products",
+        verbose_name="Владелец",
+        null=True,
+        blank=True
+    )
 
     class Meta:
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
         ordering = ["category"]
+        permissions = [
+            ("can_unpublish_product", "Can unpublish product"),
+        ]
 
     def __str__(self):
         return f"{self.name}"
