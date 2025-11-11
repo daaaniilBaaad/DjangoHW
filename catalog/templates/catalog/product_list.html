@@ -4,7 +4,11 @@
 <div class="container mt-3">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h2>Каталог товаров</h2>
-        <a class="btn btn-success" href="{% url 'catalog:product_create' %}">Создать новый товар</a>
+        {% if user.is_authenticated %}
+            <a class="btn btn-success" href="{% url 'catalog:product_create' %}">Создать новый товар</a>
+        {% else %}
+            <p class="text-muted">Авторизуйтесь, чтобы добавлять товары.</p>
+        {% endif %}
     </div>
 </div>
 
@@ -24,10 +28,14 @@
                         </p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
                             <a class="btn btn-primary" href="{% url 'catalog:product_detail' product.pk %}" role="button">Посмотреть</a>
-                            <div>
-                                <a class="btn btn-warning btn-sm" href="{% url 'catalog:product_update' product.pk %}">Редактировать</a>
-                                <a class="btn btn-danger btn-sm" href="{% url 'catalog:product_delete' product.pk %}">Удалить</a>
-                            </div>
+                            {% if user.is_authenticated %}
+                                {% if user == product.owner or perms.catalog.can_unpublish_product or perms.catalog.delete_product %}
+                                    <div>
+                                        <a class="btn btn-warning btn-sm" href="{% url 'catalog:product_update' product.pk %}">Редактировать</a>
+                                        <a class="btn btn-danger btn-sm" href="{% url 'catalog:product_delete' product.pk %}">Удалить</a>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
                         </div>
                     </div>
                 </div>
